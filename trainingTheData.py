@@ -9,7 +9,7 @@ all = []
 import nltk
 from nltk import word_tokenize import re
 NounList=[]
-def detectNoun(msg): global NounList text=word_tokenize(msg) text=nltk.pos_tag(text) print(text)
+def detectNoun(msg): global NounList text=word_tokenize(msg) text=nltk.pos_tag(text)
 for i in text : nouns=re.findall(“[a-zA-Z]+“, str(i))
 if nouns[1].find(‘NN’) >= 0 and len(nouns[0]) is not 1: NounList.append(nouns[0])
 detectNoun(“i want to reserve in marriot”) print(NounList)

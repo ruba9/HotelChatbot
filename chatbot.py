@@ -2,24 +2,25 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
 
-# Enable info level logging
-import re
+
 
 def smartrespond(msg):
 
     chatbot = ChatBot(
         'Hotelbot',
-        trainer='chatterbot.trainers.ListTrainer'
+        trainer='chatterbot.trainers.ListTrainer',
+    database='db.sqlite3'
+
+
     )
 
 
-    chatbot.train([
-       "movin pick"
-        "good choice let me gather data  "
-    ])
+    # chatbot.train([
+    #    "weather"
+    #     "all right do you like a hotel in sharm ? or in alaska"
+    # ])
 
-    # Now let's get a response to a greeting
     response = str(chatbot.get_response(msg))
-    return response;
+    return response
 
-smartrespond("hotels")
+smartrespond("hello")
